@@ -1,0 +1,31 @@
+use sys;
+create table icc_world_cup
+(
+Team_1 Varchar(20),
+Team_2 Varchar(20),
+Winner Varchar(20)
+);
+INSERT INTO icc_world_cup values('India','SL','India');
+INSERT INTO icc_world_cup values('SL','Aus','Aus');
+INSERT INTO icc_world_cup values('SA','Eng','Eng');
+INSERT INTO icc_world_cup values('Eng','NZ','NZ');
+INSERT INTO icc_world_cup values('Aus','India','India');
+
+select * from icc_world_cup;
+select * from icc_world_Cup t1 
+ join
+icc_world_Cup t2 on t1.Team_1=t2.Team_2;
+
+
+
+create view icc_world_cup_result as (
+select T.team_name as team_name,count(1) as matches,SUM(T.flag) as wins,count(1)-SUM(T.flag) as loses
+from
+(select Team_1 as team_name, case when Winner=Team_1 then 1 else 0 end as flag from icc_world_cup
+union all
+select Team_2 as team_name, case when Winner=Team_2 then 1 else 0 end as flag from icc_world_cup
+) as T 
+group by team_name
+order by wins desc
+);
+select * from icc_world_cup_result;
