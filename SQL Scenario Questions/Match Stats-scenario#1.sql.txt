@@ -1,7 +1,7 @@
---Comments - 
+--Comments - D1804 - Complete
 -- Refer below video to understand scenario and below sql
 --https://www.youtube.com/watch?v=qyAgWL066Vo&list=PLBTZqjSKn0IeKBQDjLmzisazhqQy4iGkb
--- Solved
+--
 --Actual SQL Starts here 
 
 use sys;
