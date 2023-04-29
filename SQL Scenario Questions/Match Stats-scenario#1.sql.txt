@@ -3,7 +3,7 @@
 --https://www.youtube.com/watch?v=qyAgWL066Vo&list=PLBTZqjSKn0IeKBQDjLmzisazhqQy4iGkb
 --
 --Actual SQL Starts here 
-
+-- 
 use sys;
 create table icc_world_cup
 (
