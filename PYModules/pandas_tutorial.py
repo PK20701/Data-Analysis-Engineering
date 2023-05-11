@@ -1,6 +1,8 @@
 """
+
 Introducing pandas using namespace pd,
 such that you can call pandas class using pd instead of pandas.
+
 """
 
 import pandas as pd
